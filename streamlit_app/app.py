@@ -1,3 +1,8 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+
 import streamlit as st
 from src.models.base import LBOModel
 from src.cases.ltg_analytics import create_ltg_case
