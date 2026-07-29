@@ -10,27 +10,6 @@ from src.cases.saas_platform import create_saas_case
 from src.cases.logistics_services import create_logistics_case
 
 
-# Password auth gate
-if "authenticated" not in st.session_state:
-    st.session_state.authenticated = False
-    
-if not st.session_state.authenticated:
-    st.title("🔐 execution-alpha")
-    st.write("Enter password to access the LBO modeling engine.")
-    
-    password = st.text_input("Password:", type="password", key="login_password")
-    
-    if password:
-        if password == "execution-alpha":  # Change this to your own password
-            st.session_state.authenticated = True
-            st.success("✓ Access granted!")
-            st.rerun()
-        else:
-            st.error("❌ Incorrect password. Try again.")
-
-    st. stop()
-
-
 st.set_page_config(page_title="execution-alpha", layout="wide")
 
 st.title("⭐ execution-alpha: LBO Model Explorer")
